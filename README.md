@@ -7,7 +7,7 @@ BeCode-javascript-loops-exercise
 * no style 
 
 ## Extra Challenges . 
-Add the makeRandom functionality.    
+Add the `makeRandom` functionality.    
 Make the field look more like a chessboard. Add an indicator row on top and on the side (numbers and letters).  
 Make the squares contain their coördinate instead of their number.  
 
