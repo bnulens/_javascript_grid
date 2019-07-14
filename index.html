@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Field</title>
+
+    <style>
+    
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            margin: 20px
+        }
+        #field {
+            width: 420px;
+            height: 420px;
+            display: flex;
+            flex-wrap: wrap;
+            border: solid 2px black;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .bgblack {
+            background-color: black;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div>
+        <button id="generate">Generate</button>
+        <button id="random">Randomize!</button>
+    </div>
+
+    <div id="field"></div>
+
+
+    <script>
+        let field = document.getElementById("field");
+        let standard = document.getElementById("generate");
+        standard.addEventListener("click", generateField);
+        let random = document.getElementById("random");
+        random.addEventListener("click", makeRandom);
+        
+        // MAKE FIELD WITH ... 
+        function generateField() {
+            // ITERATION (FROM X to Y)
+            for (i = 1; i < 101; i++) {
+                // MAKE DIVS FROM THE LOOP
+                let square = document.createElement("div");
+                // DEFINE THE DIVS WITH THE STYLE
+                square.setAttribute("class","cell");
+                square.setAttribute("id","div", +i);
+                // ASSIGN THE POSITION
+                field.append(square);
+                // CREATE NUMBER INSIDE 
+                let h5 = document.createElement("h5");
+                // ITERATION is CONTEXT FOR H5 
+                h5.textContent = i;
+                // ADD the H3 to the SQUARE
+                square.appendChild(h5);
+            }
+                                        /*
+                                        Write your code here to generate a field as indicated in the image.
+                                        For now you don't need to write any CSS. Any necessary classes are already provided!
+                                        */
+         }
+        function makeRandom() {
+            /* 
+            Write your code here to randomize the colors.
+            You could do this for example by making some classes in CSS with different color schemes,
+            and then asigning a random one to each cell.
+            */
+        }
+        function reset() {
+            field.innerHTML = "";
+        }
+    
+    </script>
+    
+</body>
+</html>
+
+<!-- Read the code and make sure you understand it. Write comments wherever necessary.
+Add some console.log's in the code and see what certain variables contain. Play around with it a little bit!
+Write the code necessary to complete the exercise (Use the CSS already provided).
+
+To start off, we are going to generate a 100 squares.
+Those squares should be given an alternating colorscheme (black-white-black-white-...)
+Every square needs to contain it's own number. (1, 2, 3, 4, ...).
+Style your page to make it look a bit more appealing!
+
+Bonus
+1. Add the makeRandom functionality.
+2. Make the field look more like a chessboard. Add an indicator row on top and on the side (numbers and letters).
+3. Make the squares contain their coördinate instead of their number. -->
